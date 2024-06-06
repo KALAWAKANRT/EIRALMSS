@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>EIRA | GAMEDEV</title>
+    <title>EIRA | TEMPLATE</title>
     <link rel="icon" type="images/x-icon" href="img/default.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

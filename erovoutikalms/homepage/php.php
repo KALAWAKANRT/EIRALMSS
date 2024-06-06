@@ -1,4 +1,4 @@
-<?php require_once "../controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; //This is the php course page?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,4 +1,4 @@
-<?php require_once "../controllerUserData.php";
+<?php require_once "../controllerUserData.php"; //This is the Profile Page
 $email=$_SESSION['email'];
 $fname=$_SESSION['fname'];
 $lname=$_SESSION['lname'];
@@ -69,7 +69,7 @@ function courseExists($courseName, $coursesArray) {
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="#"> <!-- This thing don't exist yet, so make this -->
                             <i class='bx bx-cog icon' ></i>
                             <span class="text nav-text">Settings</span>
                         </a>

@@ -1,4 +1,4 @@
-<?php require_once "../controllerUserData.php"; 
+<?php require_once "../controllerUserData.php"; //This is the dashboard page. 
 $courses = $_SESSION['course'];
 $progress = $_SESSION['progress'];
 function courseExists($courseName, $coursesArray) {
@@ -103,7 +103,7 @@ function courseExists($courseName, $coursesArray) {
         <h1>Skills</h1>
         <i class="fas fa-user-cog"></i>
       </div>
-      <div class="main-skills">
+      <div class="main-skills"> <!-- This part doesn't do anything yet. You can change or remove it -->
         <div class="card">
           <i class="fas fa-laptop-code"></i>
           <h3>Web developement</h3>
@@ -133,7 +133,7 @@ function courseExists($courseName, $coursesArray) {
             <li>finished</li>
           </ul>
           <div class="course">
-          <?php if ($courses != NULL): ?>
+          <?php if ($courses != NULL): //This part does function correctly?>
                                 <?php foreach ($courses as $index => $course): ?>
                                     <?php if (courseExists($course, $courses)): ?>
                                         <?php
@@ -196,7 +196,7 @@ function courseExists($courseName, $coursesArray) {
       modeText = body.querySelector(".mode-text");
 
 
-toggle.addEventListener("click" , () =>{
+toggle.addEventListener("click" , () =>{ //For the sidebar
     sidebar.classList.toggle("close");
 })
 
@@ -204,7 +204,7 @@ searchBtn.addEventListener("click" , () =>{
     sidebar.classList.remove("close");
 })
 
-modeSwitch.addEventListener("click" , () =>{
+modeSwitch.addEventListener("click" , () =>{ //Dark Mode
     body.classList.toggle("dark");
     
     if(body.classList.contains("dark")){
@@ -214,7 +214,7 @@ modeSwitch.addEventListener("click" , () =>{
         
     }
 });
-document.getElementById('expand-courses').addEventListener('click', function() {
+document.getElementById('expand-courses').addEventListener('click', function() { //Expand courses and the likes
         const hiddenCourses = document.querySelectorAll('.box.hidden');
 
         hiddenCourses.forEach(course => {

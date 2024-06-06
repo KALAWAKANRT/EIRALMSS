@@ -1,4 +1,6 @@
-<?php require_once "../controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php";
+//This is the template for course pages.
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

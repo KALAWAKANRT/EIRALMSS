@@ -1,4 +1,4 @@
-<?php require_once "../controllerUserData.php"; ?>
+<?php require_once "../controllerUserData.php"; //This is the gamedev course page. It's unfinished?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

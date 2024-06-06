@@ -6,7 +6,7 @@ $email = "";
 $name = "";
 $errors = array(); // Initialize an array to store errors
 
-if (isset($_POST['signup'])) {
+if (isset($_POST['signup'])) { //For register
     $fname = mysqli_real_escape_string($con, $_POST['fname']);
     $lname = mysqli_real_escape_string($con, $_POST['lname']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -69,7 +69,7 @@ if(count($errors) === 0){
     }
 }
 }
-if (isset($_POST['start-course'])) {
+if (isset($_POST['start-course'])) { // This activates when you click "Start Learning"
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
         $course = $_POST['course'];
@@ -116,7 +116,7 @@ if (isset($_POST['start-course'])) {
 
 
 
-if (isset($_POST['authenticate'])) {
+if (isset($_POST['authenticate'])) { //This is when you click and fill out the Payment modal
     $email = $_SESSION['email'];
     $password = $_SESSION['password'];
 
@@ -164,8 +164,8 @@ if (isset($_POST['authenticate'])) {
                    Receipt in the attachment:
                 ";
 
-                $userSender = "robocoman.1@gmail.com";
-                $adminSender = "robocoman.1@gmail.com";
+                $userSender = "robocoman.1@gmail.com"; //Change to actual admin account
+                $adminSender = "robocoman.1@gmail.com"; //Change to actual admin account
 
                 // Send email to the user
                 if (send_mail($email, $subject, $userMessage, $userSender)) {
@@ -214,7 +214,7 @@ if (isset($_POST['authenticate'])) {
 
 
     //if user click verification code submit button
-    if(isset($_POST['check'])){
+    if(isset($_POST['check'])){ // Simply used for verification
         $_SESSION['info'] = "";
         $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
         $check_code = "SELECT * FROM students WHERE code = $otp_code";
@@ -240,7 +240,7 @@ if (isset($_POST['authenticate'])) {
         }
     }
  //if user click login button
-if(isset($_POST['login'])){
+if(isset($_POST['login'])){ //Checks if the user has an account before logging them in
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
      
@@ -301,7 +301,7 @@ if(isset($_POST['login'])){
 
 
     //if user click continue button in forgot password form
-    if(isset($_POST['check-email'])){
+    if(isset($_POST['check-email'])){ //Checks you email. Used for resetting password
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $check_email = "SELECT * FROM students WHERE student_email='$email'";
         $run_sql = mysqli_query($con, $check_email);
@@ -312,7 +312,7 @@ if(isset($_POST['login'])){
             if($run_query){
                 $subject = "Password Reset Code";
                 $message = "Your password reset code is $code";
-                $sender = "From: robocoman.1@gmail.com";
+                $sender = "From: robocoman.1@gmail.com";//Change to actual admin account
                 if(send_mail($email, $subject, $message, $sender)){
                     $info = "We will send a verification code to $email";
                     $_SESSION['info'] = $info;
@@ -331,7 +331,7 @@ if(isset($_POST['login'])){
     }
 
     //if user click check reset otp button
-    if(isset($_POST['check-reset-otp'])){
+    if(isset($_POST['check-reset-otp'])){ // Lets you input the code you receive for reseting password
         $_SESSION['info'] = "";
         $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
         $check_code = "SELECT * FROM students WHERE code = $otp_code";
@@ -350,7 +350,7 @@ if(isset($_POST['login'])){
     }
 
     //if user click change password button
-	if(isset($_POST['change-password'])){
+	if(isset($_POST['change-password'])){ // This is where you reset password
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
     
@@ -397,7 +397,7 @@ if(isset($_POST['login'])){
 }
  
    //if login now button click
-   if(isset($_POST['login-now'])){
+   if(isset($_POST['login-now'])){ //This is for after clicking the log in now button after changing password
     header('Location: ../homepage/profile.php');
 }
     if(isset($_POST['dashboard'])){
@@ -444,7 +444,7 @@ if(isset($_POST['login'])){
     $_SESSION['course'] = $courses;
     header('Location: ../homepage/profile.php');
    }
-if(isset($_POST['check-password'])){
+if(isset($_POST['check-password'])){ // This is for checking password reset code
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $pass = mysqli_real_escape_string($con, $_POST['password']);
     $confirmpass = "SELECT password FROM students WHERE student_email='$email'";
@@ -461,7 +461,7 @@ if(isset($_POST['check-password'])){
         if($run_query){
             $subject = "Password Reset Code";
             $message = "Your password reset code is $code";
-            $sender = "From: robocoman.1@gmail.com";
+            $sender = "From: robocoman.1@gmail.com"; //Change to actual admin account
             if(send_mail($email, $subject, $message, $sender)){
                 $info = "We will send a verification code to $email";
                 $_SESSION['info'] = $info;
@@ -482,12 +482,12 @@ if(isset($_POST['check-password'])){
         echo "<script>alert('Incorrect password!');</script>";
     }
 }
-if(isset($_POST['contact'])){
+if(isset($_POST['contact'])){ // This is for the contact us section at the bottom before the footer
     $name =  $_POST['name'];
     $email = $_POST['email'];
     $project = $_POST['project'];
     $message = nl2br($_POST['message']);
-    $adminEmail = "robocoman.1@gmail.com";
+    $adminEmail = "robocoman.1@gmail.com"; //Do not forget to change this for actual admin account
     $adminSender = "robocoman.1@gmail.com";
     $subject = "Contact Us";
     $sendmessage = "
@@ -529,7 +529,7 @@ if(isset($_POST['quizstart'])){ // Ground work for the quiz pages. You can add m
                 }
                 break;
             case "CSS":
-                switch($quiz){
+                switch($quiz){ // you can copy paste the cases to add more quizzes or even activities
                     case "quiz1":
                         header('Location: ../quizpages/cssquiz1.php');
                         break;
@@ -562,8 +562,8 @@ if(isset($_POST['quizstart'])){ // Ground work for the quiz pages. You can add m
         echo '<script type="text/javascript">alert("You already did this quiz and passed.");</script>';
     }
 }
-if(isset($_POST['quizresults'])){
-    $passed = $_POST['quizresults'];
+if(isset($_POST['quizresults'])){ //If the value is "pass" it adds to your progress but you can't retake the quiz
+    $passed = $_POST['quizresults']; //If the value is "fail" it doesn't add to your progress and you can retake the quiz
     $course = $_POST['course'];
     $email = $_SESSION['email'];
     $quiz = $_POST['quiz']; //only up to quiz 5 in the sql table
@@ -598,7 +598,7 @@ if(isset($_POST['quizresults'])){
                 header('Location: ../homepage/css.php');
                 break;
             default:
-                echo "Wow lmao";
+                echo "Error Occurred";
                 break;
     }
 }

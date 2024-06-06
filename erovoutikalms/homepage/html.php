@@ -34,12 +34,12 @@
         <div class="container-fluid" style="background-color:#0205a1;">
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="img/Rectangle 13.png" alt="img" class="h-50 w-75">
                     </a>
                     <div class="collapse navbar-collapse bg-transparent">
                         <div class="navbar-nav ms-auto mx-xl-auto">
-                            <a href="index.html" class="nav-item active">Home</a>
+                            <a href="index.php" class="nav-item active">Home</a>
                             <a href="index.php" class="nav-item">Training</a>
                             <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>
                         </div>

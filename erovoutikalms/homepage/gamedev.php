@@ -34,12 +34,12 @@
         <div class="container-fluid" style="background-color:#0205a1;">
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="img/Rectangle 13.png" alt="img" class="h-50 w-75">
                     </a>
                     <div class="collapse navbar-collapse bg-transparent">
                         <div class="navbar-nav ms-auto mx-xl-auto">
-                            <a href="index.html" class="nav-item active">Home</a>
+                            <a href="index.php" class="nav-item active">Home</a>
                             <a href="index.php" class="nav-item">Training</a>
                             <a href="https://eira.erovoutika.ph/certificate.php" class="nav-item">Certificates</a>
                         </div>
@@ -60,13 +60,13 @@
             <img src="img/game.png" alt="img">
                 <nav class="nav d-block list-unstyled border-bottom w-75 p-2" id="tabContent">
                         <li class="nav-item">
-                            <a href="#basics" data-toggle="tab">GAMEDEV BASICS</a>
+                            <a href="#basics" onclick="showTab('basics')">GAMEDEV BASICS</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#semantic" data-toggle="tab">Game Design</a>
+                            <a href="#" onclick="showTab('second')">Second Section</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#fandv" data-toggle="tab">Placeholder</a>                    
+                            <a href="#" onclick="showTab('third')">Third Section</a>                    
                         </li>
                     </ul>
                 </nav>
@@ -77,8 +77,8 @@
 
     <section>
         <div class="tab-content">
-            <!--HTML BASICS-->
-                <div class="tab-pane container active" id="basics">
+            <!--GameDev Basics-->
+                <div class="lessons active" id="basics">
                     <h1>Game Development Basics</h1>
                         <p>
                             What is game development? To put it simply, it's the process of creating video games.
@@ -139,8 +139,8 @@
                     
                 </div>
 
-            <!--SEMANTIC HTML-->
-                <div class="tab-pane container" id="semantic">
+            <!--Second Section Here-->
+                <div class="lessons" id="second">
                     <h1>Semantic HTML</h1>
                         <p>
                             Semantic element clearly describes its meaning to both the browser and the developer. In HTML, semantic element are the type of 
@@ -192,8 +192,8 @@
                         <img src="img/html_document10.jpg" alt="img">
                 </div>
 
-            <!--FORMS & VALIDATIONS-->
-                <div class="tab-pane container" id="fandv">
+            <!--Third Here-->
+                <div class="lessons" id="third">
                     <h1>Forms and Validations</h1>
                         <p>
                             Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. 
@@ -277,6 +277,17 @@
                 </div>
         </div>
     </section>
-
+</main>
+<script type="module" src=".js/main.js"></script>
+<script>
+       function showTab(lessonId) {
+        var lessons = document.querySelectorAll('.lessons');
+        lessons.forEach(function(lessons) {
+            lessons.classList.remove('active');
+        });
+        var selectedLesson = document.getElementById(lessonId);
+        selectedLesson.classList.add('active');
+    }
+</script>
 </body>
 </html>
